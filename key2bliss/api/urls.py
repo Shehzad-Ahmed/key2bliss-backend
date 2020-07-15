@@ -12,9 +12,11 @@ router.register("signup", views.UserRegistrationViewSet, basename="signup")
 
 router.register("passwords", views.PasswordsViewSet, basename="password")
 
+router.register("user", views.UserViewSet, basename="users")
+
 urlpatterns = [
     path("", include(router.urls)),
-    path("login", TokenObtainPairView.as_view(), name="login"),
+    path("login/", TokenObtainPairView.as_view(), name="login"),
     path("passwords/reset/<uidb64>/<token>/", views.PasswordResetConfirmCustomView.as_view(),
          name='password_reset_confirm'),
     path("passwords/reset/done/", views.PasswordResetCompleteCustomView.as_view(), name='password_reset_complete'),
