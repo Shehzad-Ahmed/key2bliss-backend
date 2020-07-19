@@ -6,6 +6,8 @@ from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from key2bliss.api.models import UserProfiles
+
 User = get_user_model()
 
 
@@ -66,6 +68,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         instance = super().create(validated_data)
         instance.set_password(password)
         instance.save()
+        UserProfiles.objects.create(user=instance)
         self._data = {
             "success": True, "tokens": self.get_tokens(instance)
         }

@@ -12,6 +12,8 @@ router.register("signup", views.UserRegistrationViewSet, basename="signup")
 
 router.register("passwords", views.PasswordsViewSet, basename="password")
 
+router.register(r"user/profile", views.UserProfilesViewSet, basename="user-profile")
+
 router.register("user", views.UserViewSet, basename="users")
 
 urlpatterns = [
