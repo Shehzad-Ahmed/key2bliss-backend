@@ -1,1 +1,2 @@
-from key2bliss.api.serializers.users import UserChangePasswordsSerializer, UsersListSerializer
+from key2bliss.api.serializers.users import UserChangePasswordsSerializer
+from key2bliss.api.serializers.reported_problems import ReportedProblemsSerializer

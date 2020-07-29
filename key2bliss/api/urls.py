@@ -14,6 +14,8 @@ router.register("passwords", views.PasswordsViewSet, basename="password")
 
 router.register("user", views.UserViewSet, basename="users")
 
+router.register("contact_us", views.ReportedProblemsViewSet, basename="contact-us")
+
 urlpatterns = [
     path("", include(router.urls)),
     path("login/", TokenObtainPairView.as_view(), name="login"),
